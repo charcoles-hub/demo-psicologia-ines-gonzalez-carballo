@@ -2,7 +2,8 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import ines from '../assets/images/ines.webp';
-import logo from '../assets/images/logo-gabinete.webp';
+import actual from '../assets/images/web-actual.jpg';
+import propuesta from '../assets/images/propuesta.png';
 
 const fotos = import.meta.glob('../assets/images/eq-*.webp', { eager: true, import: 'default' }) as Record<string, ImageMetadata>;
 const foto = (k: string) => fotos[`../assets/images/eq-${k}.webp`];
@@ -65,53 +66,79 @@ const medios = ['Pareja', 'Ansiedad', 'Autoestima', 'Duelo', 'Paro', 'Redes soci
   title="Psicólogos en Valladolid · Gabinete Inés González Carballo"
   description="Gabinete de psicología con dos clínicas en el Paseo Zorrilla de Valladolid. Primera consulta presencial gratuita. Teléfono 653 42 10 63."
 >
-  <header class="sticky top-0 z-30 border-b border-linea bg-fondo/95 backdrop-blur">
-    <div class="wrap flex items-center justify-between gap-4 py-2">
-      <a href="#inicio" class="flex items-center gap-3 no-underline">
-        <Image src={logo} alt="" width={48} height={48} class="size-12 rounded-full object-cover" />
-        <span class="font-display text-base leading-tight sm:text-lg">Gabinete de Psicología<br /><span class="text-suave">Inés González Carballo</span></span>
-      </a>
-      <nav aria-label="Principal" class="hidden items-center gap-6 text-[0.95rem] lg:flex">
-        <a href="#servicios" class="hover:text-acento">Servicios</a>
-        <a href="#equipo" class="hover:text-acento">Equipo</a>
-        <a href="#tarifas" class="hover:text-acento">Tarifas</a>
-        <a href="#opiniones" class="hover:text-acento">Opiniones</a>
-        <a href="#contacto" class="hover:text-acento">Contacto</a>
-      </nav>
-      <a href="tel:+34653421063" class="btn btn-p hidden sm:inline-flex">Llamar al {tel}</a>
+  <div class="sticky top-0 z-30">
+    <div class="cinta">
+      <p><span class="cinta-tag">Demo</span> Propuesta de diseño para el Gabinete de Psicología Inés González Carballo, no es su web definitiva.</p>
+      <a href="https://sergiogarciaweb.com" rel="noopener">Preparada por Sergio García · ¿Te gusta? Hablamos</a>
     </div>
-  </header>
+    <header class="border-b border-linea bg-fondo/95 backdrop-blur">
+      <div class="wrap flex items-center justify-between gap-4 py-2">
+        <a href="#inicio" class="flex items-center gap-3 no-underline">
+          <span class="mono" aria-hidden="true">IGC</span>
+          <span class="font-display text-base leading-tight sm:text-lg">Gabinete de Psicología<br /><span class="text-suave">Inés González Carballo</span></span>
+        </a>
+        <nav aria-label="Principal" class="hidden items-center gap-6 text-[0.95rem] lg:flex">
+          <a href="#servicios" class="hover:text-acento">Servicios</a>
+          <a href="#equipo" class="hover:text-acento">Equipo</a>
+          <a href="#tarifas" class="hover:text-acento">Tarifas</a>
+          <a href="#opiniones" class="hover:text-acento">Opiniones</a>
+          <a href="#contacto" class="hover:text-acento">Contacto</a>
+        </nav>
+        <a href="tel:+34653421063" class="btn btn-p hidden sm:inline-flex">Llamar al {tel}</a>
+      </div>
+    </header>
+  </div>
 
   <main id="inicio">
-    <section class="wrap grid items-center gap-10 py-12 md:grid-cols-[1.15fr_0.85fr] md:py-20">
-      <div>
-        <h1 class="text-[clamp(2.6rem,1.8rem+4vw,5rem)]">Psicólogos en Valladolid</h1>
-        <p class="mt-6 max-w-xl text-xl text-suave">
-          Un equipo de 13 psicólogos y psicólogas colegiados en dos clínicas del Paseo Zorrilla.
-          <strong class="font-semibold text-tinta">La primera consulta presencial es gratuita:</strong> valoramos tus necesidades y planteamos un plan de tratamiento personalizado.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="tel:+34653421063" class="btn btn-p">Llamar al {tel}</a>
-          <a href={wa} class="btn btn-s" rel="noopener">Escribir por WhatsApp</a>
+    <section class="hero">
+      <div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="wrap grid items-center gap-10 py-12 md:grid-cols-[1.15fr_0.85fr] md:py-20">
+        <div class="entrada">
+          <h1 class="text-[clamp(2.6rem,1.8rem+4vw,5rem)]">Psicólogos en Valladolid</h1>
+          <p class="mt-6 max-w-xl text-xl text-suave">
+            Un equipo de 13 psicólogos y psicólogas colegiados en dos clínicas del Paseo Zorrilla.
+            <strong class="font-semibold text-tinta">La primera consulta presencial es gratuita:</strong> valoramos tus necesidades y planteamos un plan de tratamiento personalizado.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="tel:+34653421063" class="btn btn-p">Llamar al {tel}</a>
+            <a href={wa} class="btn btn-s" rel="noopener">Escribir por WhatsApp</a>
+          </div>
+          <p class="mt-6 text-sm text-suave">Teléfono de lunes a viernes de 8:00 a 22:00. WhatsApp de lunes a domingo.</p>
         </div>
-        <p class="mt-6 text-sm text-suave">Teléfono de lunes a viernes de 8:00 a 22:00. WhatsApp de lunes a domingo.</p>
-        <p class="mt-3 text-sm text-suave"><strong class="text-tinta">4,8 en Google</strong> con 270 reseñas</p>
+        <div class="entrada d2 mx-auto w-full max-w-sm md:max-w-none">
+          <div class="cifras">
+            <div class="cifra-g"><b data-count="4.8" data-dec="1">4,8</b><span>en Google, con <span data-count="270">270</span> reseñas</span></div>
+            <div><b data-count="13">13</b><span>psicólogos y psicólogas</span></div>
+            <div><b data-count="2">2</b><span>clínicas en el Paseo Zorrilla</span></div>
+          </div>
+        </div>
       </div>
-      <div class="mx-auto w-full max-w-sm md:max-w-none">
-        <div class="arco aspect-[4/5] bg-superficie">
-          <Image src={ines} alt="Inés González Carballo, directora del gabinete" width={370} height={300} loading="eager" fetchpriority="high" class="size-full object-cover" />
+    </section>
+
+    <section class="wrap py-10 md:py-16" aria-labelledby="comp-t">
+      <h2 id="comp-t" class="h2 max-w-2xl rv">De su web actual a esta propuesta</h2>
+      <p class="mt-3 max-w-2xl text-suave rv">Mismos contenidos, mismo teléfono, otra primera impresión. Arrastra el deslizador.</p>
+      <div class="comp rv" id="comp">
+        <div class="comp-capa">
+          <Image src={propuesta} alt="Propuesta de diseño: portada de esta demo" width={1440} height={900} class="comp-img" />
         </div>
-        <p class="mt-3 text-center text-sm text-suave">Inés González Carballo, Ph.D., directora del gabinete</p>
+        <div class="comp-capa comp-actual">
+          <Image src={actual} alt="Web actual del gabinete, inesgonzalezcarballo.com" width={800} height={500} class="comp-img" />
+        </div>
+        <span class="comp-et comp-et-a">Su web actual</span>
+        <span class="comp-et comp-et-p">Esta propuesta</span>
+        <div class="comp-asa" aria-hidden="true"><span></span></div>
+        <input type="range" min="0" max="100" value="50" class="comp-rango" aria-label="Comparar su web actual con esta propuesta" />
       </div>
     </section>
 
     <section id="servicios" class="border-t border-linea bg-superficie/60 py-16 md:py-24">
       <div class="wrap">
-        <h2 class="h2 max-w-2xl">Qué trabajamos</h2>
+        <h2 class="h2 max-w-2xl rv">Qué trabajamos</h2>
         <p class="mt-4 max-w-2xl text-suave">Para cada edad y cada situación: individual, de pareja, familiar u online.</p>
         <div class="mt-10">
           {servicios.map(([t, d]) => (
-            <div class="fila"><h3 class="text-2xl">{t}</h3><p class="text-suave">{d}</p></div>
+            <div class="fila rv"><h3 class="text-2xl">{t}</h3><p class="text-suave">{d}</p></div>
           ))}
         </div>
       </div>
@@ -137,7 +164,7 @@ const medios = ['Pareja', 'Ansiedad', 'Autoestima', 'Duelo', 'Paro', 'Redes soci
         <p class="mt-4 max-w-2xl text-suave">Psicólogas y psicólogos titulados y colegiados, con habilitación sanitaria, y una nutricionista-dietista. Inés y David Esteban Yáñez, director ejecutivo, son cofundadores y coordinan el gabinete juntos.</p>
         <ul class="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
           {equipo.map(([k, n, r, e]) => (
-            <li class="persona">
+            <li class="persona rv">
               <Image src={foto(k)} alt={n} width={310} height={387} loading="lazy" class="aspect-[4/5] w-full rounded-2xl object-cover" />
               <h3 class="mt-3 font-display text-lg leading-snug">{n}</h3>
               <p class="text-sm font-semibold text-acento">{r}</p>
@@ -151,7 +178,10 @@ const medios = ['Pareja', 'Ansiedad', 'Autoestima', 'Duelo', 'Paro', 'Redes soci
     <section class="bg-tinta py-16 text-fondo md:py-24">
       <div class="wrap grid gap-10 md:grid-cols-2">
         <div>
-          <h2 class="h2">Inés González Carballo</h2>
+          <div class="flex items-center gap-5">
+            <Image src={ines} alt="Inés González Carballo, directora del gabinete" width={150} height={150} class="size-[150px] shrink-0 rounded-full object-cover object-top" />
+            <h2 class="h2">Inés González Carballo</h2>
+          </div>
           <ul class="mt-6 space-y-3 text-[#d4e2e0]">
             <li>Doctor Philosophy in Clinical Psychology por la Universidad Internacional de Cambridge.</li>
             <li>Psicóloga colegiada por el Colegio de Psicólogos de Castilla y León (CL-04129) y con Registro Sanitario.</li>
@@ -179,7 +209,7 @@ const medios = ['Pareja', 'Ansiedad', 'Autoestima', 'Duelo', 'Paro', 'Redes soci
         </div>
         <div class="border-b border-linea">
           {tarifas.map(([t, d, p]) => (
-            <div class="tarifa"><div><h3 class="font-cuerpo text-lg font-semibold tracking-normal">{t}</h3><p class="text-sm text-suave">{d}</p></div><b>{p}</b></div>
+            <div class="tarifa rv"><div><h3 class="font-cuerpo text-lg font-semibold tracking-normal">{t}</h3><p class="text-sm text-suave">{d}</p></div><b>{p}</b></div>
           ))}
         </div>
       </div>
@@ -194,7 +224,7 @@ const medios = ['Pareja', 'Ansiedad', 'Autoestima', 'Duelo', 'Paro', 'Redes soci
         <p class="mt-3 text-sm text-suave">Testimonios de la web del gabinete, firmados solo con iniciales para proteger la identidad de cada paciente.</p>
         <div class="mt-10 columns-1 gap-6 md:columns-2">
           {opiniones.map(([t, a]) => (
-            <figure class="mb-6 break-inside-avoid rounded-2xl bg-fondo p-6">
+            <figure class="rv mb-6 break-inside-avoid rounded-2xl bg-fondo p-6">
               <blockquote class="font-display text-xl leading-snug">“{t}”</blockquote>
               <figcaption class="mt-4 text-sm font-semibold text-acento">{a}</figcaption>
             </figure>
@@ -231,6 +261,16 @@ const medios = ['Pareja', 'Ansiedad', 'Autoestima', 'Duelo', 'Paro', 'Redes soci
           </div>
           <p class="mt-6 text-[#e3f0ee]">O escribe a <a class="inline-block py-3 font-semibold underline" href="mailto:igc.direccion@gmail.com">igc.direccion@gmail.com</a></p>
         </div>
+      </div>
+    </section>
+
+    <section class="bg-tinta py-14 text-fondo" style="border-top:1px solid #2c4a52">
+      <div class="wrap flex flex-wrap items-center justify-between gap-6">
+        <div class="max-w-2xl">
+          <h2 class="h2">¿Te gusta esta propuesta? Hablamos</h2>
+          <p class="mt-3 text-[#d4e2e0]">Es una demo de diseño preparada por Sergio García, sin compromiso. Si quieres verla con tus cambios o llevarla a tu dominio, escríbeme.</p>
+        </div>
+        <a href="https://sergiogarciaweb.com" class="btn bg-white !text-acento-fuerte hover:bg-superficie" rel="noopener">Contactar con Sergio García</a>
       </div>
     </section>
   </main>

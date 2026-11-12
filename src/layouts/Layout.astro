@@ -39,10 +39,10 @@ const jsonLd = {
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body>
-    <p class="bg-tinta px-4 py-2 text-center text-xs text-fondo">
-      Propuesta de diseño para el Gabinete de Psicología Inés González Carballo · preparada por
-      <a href="https://sergiogarciaweb.com" class="underline hover:text-superficie">Sergio García</a>
-    </p>
+    <script is:inline>document.documentElement.classList.add("js")</script>
     <slot />
+    <script>
+      import '../scripts/motion.ts';
+    </script>
   </body>
 </html>
