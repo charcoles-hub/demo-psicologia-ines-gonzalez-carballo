@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalBusiness',
+  name: 'Gabinete de Psicología e Instituto de Salud Inés González Carballo',
+  description: 'Gabinete de psicología con dos clínicas en el Paseo Zorrilla de Valladolid.',
+  telephone: '+34653421063',
+  email: 'igc.direccion@gmail.com',
+  address: [
+    { '@type': 'PostalAddress', streetAddress: 'Paseo Zorrilla 34, 1º Der.', postalCode: '47006', addressLocality: 'Valladolid', addressCountry: 'ES' },
+    { '@type': 'PostalAddress', streetAddress: 'Paseo Zorrilla 48, 3º A', postalCode: '47006', addressLocality: 'Valladolid', addressCountry: 'ES' },
+  ],
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '08:00', closes: '22:00' }],
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content="es_ES" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <meta name="theme-color" content="#13292f" />
+    <link rel="preload" href={`${base}fonts/fraunces-variable.woff2`} as="font" type="font/woff2" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <p class="bg-tinta px-4 py-2 text-center text-xs text-fondo">
+      Propuesta de diseño para el Gabinete de Psicología Inés González Carballo · preparada por
+      <a href="https://sergiogarciaweb.com" class="underline hover:text-superficie">Sergio García</a>
+    </p>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@font-face { font-family: "Fraunces"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("/demo-psicologia-ines-gonzalez-carballo/fonts/fraunces-variable.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: normal; font-weight: 200 900; font-display: swap; src: url("/demo-psicologia-ines-gonzalez-carballo/fonts/source-sans-3-variable.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-style: italic; font-weight: 200 900; font-display: swap; src: url("/demo-psicologia-ines-gonzalez-carballo/fonts/source-sans-3-italic-variable.woff2") format("woff2"); }
+
+@theme {
+  --color-fondo: #f3f6f5;
+  --color-superficie: #e3edeb;
+  --color-tinta: #13292f;
+  --color-suave: #4b6168;
+  --color-linea: #c9d8d6;
+  --color-acento: #1f6e73;
+  --color-acento-fuerte: #174f54;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-cuerpo: "Source Sans 3", system-ui, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { background: var(--color-fondo); color: var(--color-tinta); font-family: var(--font-cuerpo); font-size: 1.0625rem; line-height: 1.6; caret-color: var(--color-acento); accent-color: var(--color-acento); padding-bottom: 4.5rem; }
+  @media (min-width: 768px) { body { padding-bottom: 0; } }
+  h1, h2, h3 { font-family: var(--font-display); font-weight: 500; line-height: 1.1; letter-spacing: -0.015em; }
+  ::selection { background: var(--color-acento); color: #fff; }
+  :focus-visible { outline: 2px solid var(--color-acento); outline-offset: 3px; }
+  a { text-underline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+}
+
+.wrap { width: min(100% - 2rem, 72rem); margin-inline: auto; }
+.h2 { font-size: clamp(1.8rem, 1.4rem + 1.8vw, 2.8rem); }
+@layer components { .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.6rem 1.4rem; border-radius: 999px; font-weight: 600; text-decoration: none; transition: background-color .2s, color .2s, border-color .2s; white-space: nowrap; }
+.btn-p { background: var(--color-acento); color: #fff; }
+.btn-p:hover { background: var(--color-acento-fuerte); }
+.btn-s { border: 1.5px solid var(--color-tinta); color: var(--color-tinta); }
+.btn-s:hover { background: var(--color-tinta); color: var(--color-fondo); } }
+.arco { border-radius: 999px 999px 1.25rem 1.25rem; overflow: hidden; }
+.fila { display: grid; gap: 0.5rem 3rem; padding-block: 1.5rem; border-top: 1px solid var(--color-linea); }
+@media (min-width: 768px) { .fila { grid-template-columns: 16rem 1fr; } }
+.persona img { filter: grayscale(1); transition: filter .3s; }
+.persona:hover img { filter: grayscale(0); }
+.tarifa { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1rem; border-top: 1px solid var(--color-linea); align-items: baseline; }
+.tarifa b { font-family: var(--font-display); font-weight: 500; font-size: 1.5rem; white-space: nowrap; }
