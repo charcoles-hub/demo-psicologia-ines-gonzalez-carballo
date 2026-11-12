@@ -68,8 +68,8 @@ const medios = ['Pareja', 'Ansiedad', 'Autoestima', 'Duelo', 'Paro', 'Redes soci
 >
   <div class="sticky top-0 z-30">
     <div class="cinta">
-      <p><span class="cinta-tag">Demo</span> Propuesta de diseño para el Gabinete de Psicología Inés González Carballo, no es su web definitiva.</p>
-      <a href="https://sergiogarciaweb.com" rel="noopener">Preparada por Sergio García · ¿Te gusta? Hablamos</a>
+      <p><span class="cinta-tag">Demo</span> <span class="md:hidden">Propuesta de diseño, no es la web definitiva</span><span class="hidden md:inline">Propuesta de diseño para el Gabinete de Psicología Inés González Carballo, no es su web definitiva.</span></p>
+      <a href="https://sergiogarciaweb.com" rel="noopener"><span class="md:hidden">Sergio García · Hablamos</span><span class="hidden md:inline">Preparada por Sergio García · ¿Te gusta? Hablamos</span></a>
     </div>
     <header class="border-b border-linea bg-fondo/95 backdrop-blur">
       <div class="wrap flex items-center justify-between gap-4 py-2">
@@ -270,7 +270,10 @@ const medios = ['Pareja', 'Ansiedad', 'Autoestima', 'Duelo', 'Paro', 'Redes soci
           <h2 class="h2">¿Te gusta esta propuesta? Hablamos</h2>
           <p class="mt-3 text-[#d4e2e0]">Es una demo de diseño preparada por Sergio García, sin compromiso. Si quieres verla con tus cambios o llevarla a tu dominio, escríbeme.</p>
         </div>
-        <a href="https://sergiogarciaweb.com" class="btn bg-white !text-acento-fuerte hover:bg-superficie" rel="noopener">Contactar con Sergio García</a>
+        <div class="flex flex-wrap gap-3">
+          <a href="tel:+34620650597" class="btn bg-white !text-acento-fuerte hover:bg-superficie">Llamar al 620 650 597</a>
+          <a href="https://sergiogarciaweb.com" class="btn border-[1.5px] border-white text-white hover:bg-white hover:!text-acento-fuerte" rel="noopener">sergiogarciaweb.com</a>
+        </div>
       </div>
     </section>
   </main>
